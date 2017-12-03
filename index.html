@@ -1,205 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/javascript.js"></script>
 
     <title> Search in Github </title>
-    
-    <!--añadir a fichero externo-->
-    
-    <style>
-        
-        * {
-            font-family: 'Arial, Helvetica', sans-serif;
-        }
-    
-        body {
-            background:#F0F0F0;
-            
-        }
-        
-        button {
-            font-size:12px;
-            font-weight: bold;
-            height: 2em;
-            width: 28%;
-        }
-        
-        input[type="search"] {
-            width: 70%;
-            height: 2em;
-        }
-        
-        .content {
-            min-width:400px;
-            max-width:20%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 0 auto;
-        }
-        
-        .box {
-            background:white;
-            border-radius:5px;
-            box-shadow: 6px 9px 26px -2px rgba(102,102,102,0.62);
-            margin: 2em;
-            padding: 5%;
-        }
-        
-       
-        
-        
-        
-        
-    
-         #errorwarning {
-            background: #F9DEDE;
-            border-radius: 3px;
-            border: 1px solid #CFB2B2; 
-            color: #920F07;
-            height: 3em;
-            font-size: 12px;
-            padding: 0px 16px;
-            margin-top: 1em;
-        }
-            
-    
-        .repoheader {
-            display:flex;
-            color:#333;
-        }
-        
-        #image {
-            width:20%;
-            min-width: 75px;
-            padding-right: 15px;
-        }
-        #image img {
-            max-width: 100%;
-        }
-        
-        #repositories {
-            margin-top:1em;
-        }
-                
-        #userinfo {
-            width:80%;
-        }
-        #username {
-            font-style: italic;
-            font-size:12px;
-            }
-        #name {
-            font-weight: bold;
-            font-size:2em;    
-        }
-        #bio {
-            font-size: 12px;
-        }
-        
-        .listrepotit {
-            color:#333;
-            font-weight:bold;
-            border-bottom: 2px solid;
-            margin: 1em auto;
-            padding-bottom: 1em;
-        }
-        .repoinfo {
-            padding: 0 1em;
-            display:flex;
-        }
-        #repotitle {
-            font-weight: bold;
-            width:70%;
-        }
-        .repoicons {
-            display:flex;
-            align-items: flex-end;
-        }
-        #repostars {
-            font-size: 13px;
-        }
-        #repoforks {
-            font-size: 13px;
-           
-        }
-    
-    
-    </style>
-    
-    
+
 </head>
+
 <body>
 
     <div class="content">
-      <!--Búsqueda-->
-        
+        <!--Búsqueda-->
+
         <div id="searchinput" class="box">
-            <div id="buscar"> 
-                <input type="search" placeholder="Search username..."> <button id="search" onclick="funcionsearch()">Search</button> 
+            <div id="buscar">
+                <input type="search" placeholder="Search username..."> <button id="search" onclick="funcionsearch()">Search</button>
             </div>
         </div>
-      <!--No hay Nada-->
-        <div id="noresults" class="box">            
-             <div id="buscar"> 
-                <input type="search" placeholder="Search username..."> <button class="search" onclick="funcionsearch()">Search</button> 
-             </div>
-             <div id="errorwarning"> 
-                 <p>User does not exist</p>
+        <!--No hay Nada-->
+        <div id="noresults" class="box">
+            <div id="buscar">
+                <input type="search" placeholder="Search username..."> <button class="search" onclick="funcionsearch()">Search</button>
+            </div>
+            <div id="errorwarning">
+                <p>User does not exist</p>
             </div>
         </div>
-    <!--se muestran resultados-->
+        <!--se muestran resultados-->
         <div id="resultados" class="box">
-            <div id="buscar"> 
-                <input type="search" placeholder="Search username..."> <button class="search" onclick="funcionsearch()">Search</button> 
-             </div>
-            
+            <div id="buscar">
+                <input type="search" placeholder="Search username..."> <button class="search" onclick="funcionsearch()">Search</button>
+            </div>
+
             <div id="repositories">
-                
+
                 <div class="repoheader">
-                <!--Imagen de usuario, bio, nombre...-->
+                    <!--Imagen de usuario, bio, nombre...-->
                     <div id="image"><img src="img/img.png"></div>
                     <div id="userinfo">
                         <div id="username">@username</div>
                         <div id="name">Full name</div>
                         <div id="bio">this is the bio...</div>
-                    </div>    
-                </div> <!--closing repositories header-->
-                
-                <div id="listrepo">
-                    
-                    <div class="listrepotit">Repositories</div> 
-                    
-                    <div class="repoinfo">
-                        <div id="repotitle">Repo1</div> <!--repositorio individual--> 
-                        <div class="repoicons">
-                            <div id="repostars"><i class="fa fa-star" aria-hidden="true"></i>
-10</div>
-                            <div id="repoforks"> <i class="fa fa-code-fork" aria-hidden="true"></i>
-5</div>
                     </div>
-                    </div>
-                
-                    
-                    <hr>
-                        
-                    
                 </div>
-                    
-            
-            
-            
+                <!--closing repositories header-->
+
+                <div id="listrepo">
+
+                    <div class="listrepotit">Repositories</div>
+
+                    <div class="repoinfo">
+                        <div id="repotitle">Repo1</div>
+                        <!--repositorio individual-->
+                        <div class="repoicons">
+                            <div id="repostars"><i class="fa fa-star" aria-hidden="true"></i> 10
+                            </div>
+                            <div id="repoforks"> <i class="fa fa-code-fork" aria-hidden="true"></i> 5
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+
+                </div>
+
+
+
+
             </div>
-           
-        
-        
+
+
+
         </div>
-        
-        </div> <!--content-->
-    
-      
+
+    </div>
+    <!--content-->
+
+
 
 </body>
+
 </html>
